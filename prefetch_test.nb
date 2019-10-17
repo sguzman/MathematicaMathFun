@@ -1,0 +1,410 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     16617,        400]
+NotebookOptionsPosition[     15193,        366]
+NotebookOutlinePosition[     15557,        382]
+CellTagsIndexPosition[     15514,        379]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"CountryData", "[", 
+  RowBox[{"\"\<Canada\>\"", ",", "\"\<GDP\>\""}], "]"}]], "Input",
+ CellChangeTimes->{{3.779442847619183*^9, 3.779442868289617*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"094580d1-a6c4-45f0-8ad8-b388fb93a13a"],
+
+Cell[BoxData[
+ TemplateBox[{"1.52976049220135`*^12",RowBox[{
+     FormBox["\"$\"", TraditionalForm], "\[VeryThinSpace]"}],
+   RowBox[{"\"per \"", "\[InvisibleSpace]", "\"year\""}],
+   "US dollars per year",FractionBox["\"USDollars\"", "\"Years\""]},
+  "QuantityPrefixUnit"]], "Output",
+ CellChangeTimes->{3.779442873889307*^9},
+ CellLabel->"Out[1]=",ExpressionUUID->"628de20b-308c-4abe-ae29-d66933d7724c"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"EntityPrefetch", "[", 
+  RowBox[{"Entity", "[", "\"\<Country\>\"", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.7794428767886763`*^9, 3.779442886257545*^9}},
+ CellLabel->"In[2]:=",ExpressionUUID->"a27fef62-f3ba-467d-ad2d-b7fff509a334"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   TagBox["Success",
+    "SummaryHead"], "[", 
+   DynamicModuleBox[{Typeset`open$$ = False, Typeset`embedState$$ = "Ready"}, 
+    
+    TemplateBox[{PaneSelectorBox[{False -> GridBox[{{
+            PaneBox[
+             ButtonBox[
+              DynamicBox[
+               FEPrivate`FrontEndResource[
+               "FEBitmaps", "SquarePlusIconMedium"]], 
+              ButtonFunction :> (Typeset`open$$ = True), Appearance -> None, 
+              Evaluator -> Automatic, Method -> "Preemptive"], 
+             Alignment -> {Center, Center}, ImageSize -> 
+             Dynamic[{
+               Automatic, 3.5 CurrentValue["FontCapHeight"]/
+                AbsoluteCurrentValue[Magnification]}]], 
+            FrameBox[
+             StyleBox["\"\[Checkmark]\"", 
+              Directive[
+               RGBColor[
+               0.3607843137254902, 0.596078431372549, 0.3803921568627451], 
+               25], StripOnInput -> False], ContentPadding -> False, 
+             FrameStyle -> None, FrameMargins -> {{0, 0}, {0, 0}}, 
+             StripOnInput -> False], 
+            GridBox[{{
+               RowBox[{
+                 TagBox[
+                  TemplateBox[{"\"Message\"", "\": \""}, "RowDefault"], 
+                  "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                 TagBox["\"Prefetch successful.\"", "SummaryItem"]}]}, {
+               RowBox[{
+                 TagBox[
+                  TemplateBox[{"\"Values\"", "\": \""}, "RowDefault"], 
+                  "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                 TagBox["185500", "SummaryItem"]}]}}, 
+             GridBoxAlignment -> {
+              "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, AutoDelete -> 
+             False, GridBoxItemSize -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+             GridBoxSpacings -> {"Columns" -> {{2}}, "Rows" -> {{Automatic}}},
+              BaseStyle -> {
+              ShowStringCharacters -> False, NumberMarks -> False, 
+               PrintPrecision -> 3, ShowSyntaxStyles -> False}]}}, 
+          GridBoxAlignment -> {"Rows" -> {{Top}}}, AutoDelete -> False, 
+          GridBoxItemSize -> {
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+          BaselinePosition -> {1, 1}], True -> GridBox[{{
+            PaneBox[
+             ButtonBox[
+              DynamicBox[
+               FEPrivate`FrontEndResource[
+               "FEBitmaps", "SquareMinusIconMedium"]], 
+              ButtonFunction :> (Typeset`open$$ = False), Appearance -> None, 
+              Evaluator -> Automatic, Method -> "Preemptive"], 
+             Alignment -> {Center, Center}, ImageSize -> 
+             Dynamic[{
+               Automatic, 3.5 CurrentValue["FontCapHeight"]/
+                AbsoluteCurrentValue[Magnification]}]], 
+            FrameBox[
+             StyleBox["\"\[Checkmark]\"", 
+              Directive[
+               RGBColor[
+               0.3607843137254902, 0.596078431372549, 0.3803921568627451], 
+               25], StripOnInput -> False], ContentPadding -> False, 
+             FrameStyle -> None, FrameMargins -> {{0, 0}, {0, 0}}, 
+             StripOnInput -> False], 
+            GridBox[{{
+               RowBox[{
+                 TagBox[
+                  TemplateBox[{"\"Message\"", "\": \""}, "RowDefault"], 
+                  "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                 TagBox["\"Prefetch successful.\"", "SummaryItem"]}]}, {
+               RowBox[{
+                 TagBox[
+                  TemplateBox[{"\"Values\"", "\": \""}, "RowDefault"], 
+                  "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                 TagBox["185500", "SummaryItem"]}]}, {
+               RowBox[{
+                 TagBox[
+                  TemplateBox[{"\"Domain\"", "\": \""}, "RowDefault"], 
+                  "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                 TagBox["\"Country\"", "SummaryItem"]}]}, {
+               RowBox[{
+                 TagBox[
+                  TemplateBox[{"\"CloudBase\"", "\": \""}, "RowDefault"], 
+                  "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                 TagBox[
+                 "\"https://www.wolframcloud.com/\"", "SummaryItem"]}]}, {
+               RowBox[{
+                 TagBox[
+                  TemplateBox[{"\"Tag\"", "\": \""}, "RowDefault"], 
+                  "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                 TagBox["\"Prefetch\"", "SummaryItem"]}]}}, 
+             GridBoxAlignment -> {
+              "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, AutoDelete -> 
+             False, GridBoxItemSize -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+             GridBoxSpacings -> {"Columns" -> {{2}}, "Rows" -> {{Automatic}}},
+              BaseStyle -> {
+              ShowStringCharacters -> False, NumberMarks -> False, 
+               PrintPrecision -> 3, ShowSyntaxStyles -> False}]}}, 
+          GridBoxAlignment -> {"Rows" -> {{Top}}}, AutoDelete -> False, 
+          GridBoxItemSize -> {
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+          BaselinePosition -> {1, 1}]}, 
+       Dynamic[Typeset`open$$], ImageSize -> Automatic]},
+     "SummaryPanel"],
+    DynamicModuleValues:>{}], "]"}],
+  Success["Prefetch", 
+   Association[
+   "MessageTemplate" -> "Prefetch successful.", "Values" -> 185500, "Domain" -> 
+    "Country", "CloudBase" -> "https://www.wolframcloud.com/"]],
+  Editable->False,
+  SelectWithContents->True,
+  Selectable->False]], "Output",
+ CellChangeTimes->{3.779444750184864*^9},
+ CellLabel->"Out[2]=",ExpressionUUID->"c06383e1-eec8-4709-99d2-43555c4ff767"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"DateListPlot", "[", 
+  RowBox[{"CountryData", "[", 
+   RowBox[{"\"\<UnitedStates\>\"", ",", "\"\<GDP\>\""}], "]"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.7794447748020144`*^9, 3.779444789048009*^9}},
+ CellLabel->"In[3]:=",ExpressionUUID->"f689aaf1-61ca-46f6-bb1b-7d08d6afc725"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "DateListPlot","ldata",
+   "\"\\!\\(\\*TemplateBox[List[\\\"1.8624475`*^13\\\", \
+RowBox[List[FormBox[\\\"\\\\\\\"$\\\\\\\"\\\", TraditionalForm], \
+\\\"\\\\[VeryThinSpace]\\\"]], RowBox[List[\\\"\\\\\\\"per \\\\\\\"\\\", \\\"\
+\\\\[InvisibleSpace]\\\", \\\"\\\\\\\"year\\\\\\\"\\\"]], \\\"US dollars per \
+year\\\", FractionBox[\\\"\\\\\\\"USDollars\\\\\\\"\\\", \
+\\\"\\\\\\\"Years\\\\\\\"\\\"]], \\\"QuantityPrefixUnit\\\", Rule[SyntaxForm, \
+Mod]]\\) is not a valid dataset or list of datasets.\"",2,3,2,
+   25145339347868180729,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.77944478946628*^9},
+ CellLabel->
+  "During evaluation of \
+In[3]:=",ExpressionUUID->"d9cd29de-d94f-4df8-9aaa-c3085c7c3a44"],
+
+Cell[BoxData[
+ RowBox[{"DateListPlot", "[", 
+  TemplateBox[{"1.8624475`*^13",RowBox[{
+      FormBox["\"$\"", TraditionalForm], "\[VeryThinSpace]"}],
+    RowBox[{"\"per \"", "\[InvisibleSpace]", "\"year\""}],
+    "US dollars per year",FractionBox["\"USDollars\"", "\"Years\""]},
+   "QuantityPrefixUnit"], "]"}]], "Output",
+ CellChangeTimes->{3.779444789564169*^9},
+ CellLabel->"Out[3]=",ExpressionUUID->"e906eebd-5083-473a-a5ed-374fcfb4f93e"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"DateListPlot", "[", 
+  RowBox[{"CountryData", "[", 
+   RowBox[{"\"\<UnitedStates\>\"", ",", 
+    RowBox[{"{", 
+     RowBox[{"\"\<GDP\>\"", ",", "All"}], "}"}]}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.779444794241777*^9, 3.7794447970497637`*^9}},
+ CellLabel->"In[4]:=",ExpressionUUID->"db2471d0-70a5-40f7-84a3-538cb76ebd94"],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {{{}, {}, 
+     {RGBColor[0.368417, 0.506779, 0.709798], PointSize[
+      0.011000000000000001`], AbsoluteThickness[1.6], LineBox[CompressedData["
+
+1:eJwd0X8s1HEcx/Fbf1hSrdFCsi6KrtgMiztroRKzkiui2Vw6mlHMrzTS+bG6
+2uIOdxbq7pyKXNw1lZW6bzZtWUS16o/Dkd+5un9MTdHn9b7tdnvc57Pn9+79
+3pWWI05fx+PxhOyNT/bidAcsETxeuMOgJjUSXxzugvml81IJbK3xHWWWtCU1
+n4M5iwYO/2JXpcFagdsYbGpaOk/3BxSw1n+tNZ3uuzqOM3Newp4LdF9aDvPj
+923NhGWmP+RtfpeyYIlAaGW2jn3rvAgPxxXCEutSXA4cXmSC2yKiV3NhY7MN
+lhrK2vPgkzbBBHP31b53BfR8lwy4SvPxZhEcIGqB35e+qCum3yMZgw3XqsUl
+1Ddtn2S2TPWfLaP+10Q4417BnnKYv1oLV6vNPpWwYvcHeNL8+VMV9QudvjMn
+eY2n3KB+0zG4kydPlMNb+irhirnq4lv0/+fMsEgpybhNfeFfuDcmW1tD/dTQ
+KWZ92MITBe3negGsDHn9XAnnGozwqzNTHnXU/7cIH+V7q+qp7y2YZrbtsHEq
+2B6TDgfVOBSpad65OjhMEjjQQP03o/DP/Scc7lB/1n2GOWtlSN1I+92UCDfH
+PptoonkH18KmzJnLd6lfNQR7LByP11C/Y8MsszzyilxL+xyJgtt21tfqaN6/
+K5hlukDh0xbqR5txzrn6ifXUz1mBPe8PLpM5Vcgc89qAs72V5t2bD4fmLZ16
+QP2NRtj37cGRh9QPWoTlCp/gdtpn8t559jx/lSHhEc1bJmXmuXSP95O5YS3O
+p3WHROSAZQvOG31Ph3bQPj3dF5idfrmJDDTvIwnMsoZia9pj6tcrYefJhpRO
+6r8chPX5sfou2ueE4w9mdc/mEiPNe30UM5cdkmw3Rv4HsM89Hg==
+       "]]}}, 
+    {RGBColor[0.368417, 0.506779, 0.709798], PointSize[0.011000000000000001`],
+      AbsoluteThickness[1.6]}, {
+     {RGBColor[0.368417, 0.506779, 0.709798], PointSize[
+      0.011000000000000001`], AbsoluteThickness[1.6]}, {}}, {
+     {RGBColor[0.368417, 0.506779, 0.709798], PointSize[
+      0.011000000000000001`], AbsoluteThickness[1.6]}, {}}}, {{}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{False, False},
+  AxesLabel->{None, None},
+  AxesOrigin->{1.8933696*^9, 0},
+  DisplayFunction->Identity,
+  Frame->{{True, True}, {True, True}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->FrontEndValueCache[{{Automatic, Automatic}, {
+      Charting`DateTicksFunction[Automatic, DateTicksFormat -> {Automatic}], 
+      Charting`DateTicksFunction[
+      Automatic, DateTicksFormat -> {Automatic}, "TickLabels" -> None]}}, {{
+     Automatic, Automatic}, {{{1.5778368*^9, 
+        FormBox[
+         StyleBox["\"1950\"", 
+          Directive[], {}, StripOnInput -> False], TraditionalForm], {
+        0.013888888888888888`, 0.}, 
+        Directive[]}, {1.8933696*^9, 
+        FormBox[
+         StyleBox["\"1960\"", 
+          Directive[], {}, StripOnInput -> False], TraditionalForm], {
+        0.013888888888888888`, 0.}, 
+        Directive[]}, {2.2089888*^9, 
+        FormBox[
+         StyleBox["\"1970\"", 
+          Directive[], {}, StripOnInput -> False], TraditionalForm], {
+        0.013888888888888888`, 0.}, 
+        Directive[]}, {2.5245216*^9, 
+        FormBox[
+         StyleBox["\"1980\"", 
+          Directive[], {}, StripOnInput -> False], TraditionalForm], {
+        0.013888888888888888`, 0.}, 
+        Directive[]}, {2.8401408*^9, 
+        FormBox[
+         StyleBox["\"1990\"", 
+          Directive[], {}, StripOnInput -> False], TraditionalForm], {
+        0.013888888888888888`, 0.}, 
+        Directive[]}, {3.1556736*^9, 
+        FormBox[
+         StyleBox["\"2000\"", 
+          Directive[], {}, StripOnInput -> False], TraditionalForm], {
+        0.013888888888888888`, 0.}, 
+        Directive[]}, {3.4712928*^9, 
+        FormBox[
+         StyleBox["\"2010\"", 
+          Directive[], {}, StripOnInput -> False], TraditionalForm], {
+        0.013888888888888888`, 0.}, 
+        Directive[]}, {3.7868256*^9, 
+        FormBox[
+         StyleBox["\"2020\"", 
+          Directive[], {}, StripOnInput -> False], TraditionalForm], {
+        0.013888888888888888`, 0.}, 
+        Directive[]}}, {{1.5778368*^9, 
+        FormBox[
+         TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+        0.013888888888888888`, 0.}, 
+        Directive[]}, {1.8933696*^9, 
+        FormBox[
+         TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+        0.013888888888888888`, 0.}, 
+        Directive[]}, {2.2089888*^9, 
+        FormBox[
+         TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+        0.013888888888888888`, 0.}, 
+        Directive[]}, {2.5245216*^9, 
+        FormBox[
+         TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+        0.013888888888888888`, 0.}, 
+        Directive[]}, {2.8401408*^9, 
+        FormBox[
+         TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+        0.013888888888888888`, 0.}, 
+        Directive[]}, {3.1556736*^9, 
+        FormBox[
+         TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+        0.013888888888888888`, 0.}, 
+        Directive[]}, {3.4712928*^9, 
+        FormBox[
+         TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+        0.013888888888888888`, 0.}, 
+        Directive[]}, {3.7868256*^9, 
+        FormBox[
+         TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+        0.013888888888888888`, 0.}, 
+        Directive[]}}}}],
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  Method->{
+   "NoShowPlotTheme" -> Automatic, "OptimizePlotMarkers" -> True, 
+    "CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+        (Identity[#]& )[
+         Part[#, 1]], 
+        (Identity[#]& )[
+         Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+        (Identity[#]& )[
+         Part[#, 1]], 
+        (Identity[#]& )[
+         Part[#, 2]]}& )}},
+  PlotRange->{{1.8933696*^9, 3.6605952*^9}, {0, 1.8624475*^13}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.02], 
+     Scaled[0.05]}},
+  Ticks->{{}, Automatic}]], "Output",
+ CellChangeTimes->{3.779444797739338*^9},
+ CellLabel->"Out[4]=",ExpressionUUID->"3da92771-7c1d-4357-a3b1-4ea1b95002e9"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"MemoryInUse", "[", "]"}]], "Input",
+ CellChangeTimes->{{3.779444808114348*^9, 3.779444809810553*^9}},
+ CellLabel->"In[5]:=",ExpressionUUID->"0ed298f8-69ae-4fcd-b6e3-463550416bdf"],
+
+Cell[BoxData["478842000"], "Output",
+ CellChangeTimes->{3.779444810288712*^9},
+ CellLabel->"Out[5]=",ExpressionUUID->"5345ee80-9dcf-456e-b869-797df33bfc62"]
+}, Open  ]]
+},
+WindowSize->{1920, 1027},
+WindowMargins->{{0, Automatic}, {0, Automatic}},
+Magnification:>1.7 Inherited,
+FrontEndVersion->"12.0 for Linux x86 (64-bit) (April 8, 2019)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 254, 4, 53, "Input",ExpressionUUID->"094580d1-a6c4-45f0-8ad8-b388fb93a13a"],
+Cell[837, 28, 405, 7, 93, "Output",ExpressionUUID->"628de20b-308c-4abe-ae29-d66933d7724c"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1279, 40, 260, 4, 53, "Input",ExpressionUUID->"a27fef62-f3ba-467d-ad2d-b7fff509a334"],
+Cell[1542, 46, 5694, 119, 132, "Output",ExpressionUUID->"c06383e1-eec8-4709-99d2-43555c4ff767"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7273, 170, 305, 6, 53, "Input",ExpressionUUID->"f689aaf1-61ca-46f6-bb1b-7d08d6afc725"],
+Cell[7581, 178, 759, 15, 53, "Message",ExpressionUUID->"d9cd29de-d94f-4df8-9aaa-c3085c7c3a44"],
+Cell[8343, 195, 441, 8, 97, "Output",ExpressionUUID->"e906eebd-5083-473a-a5ed-374fcfb4f93e"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8821, 208, 355, 7, 53, "Input",ExpressionUUID->"db2471d0-70a5-40f7-84a3-538cb76ebd94"],
+Cell[9179, 217, 5599, 134, 405, "Output",ExpressionUUID->"3da92771-7c1d-4357-a3b1-4ea1b95002e9"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14815, 356, 203, 3, 53, "Input",ExpressionUUID->"0ed298f8-69ae-4fcd-b6e3-463550416bdf"],
+Cell[15021, 361, 156, 2, 117, "Output",ExpressionUUID->"5345ee80-9dcf-456e-b869-797df33bfc62"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
