@@ -1,0 +1,199 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      6871,        191]
+NotebookOptionsPosition[      6488,        176]
+NotebookOutlinePosition[      6916,        193]
+CellTagsIndexPosition[      6873,        190]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"c", "[", 
+    RowBox[{"e_", ",", "p_String"}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"c", "[", 
+     RowBox[{"e", ",", "p"}], "]"}], "=", 
+    RowBox[{"CompanyData", "[", 
+     RowBox[{"e", ",", "p"}], "]"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"ind", "[", "e_", "]"}], ":=", 
+    RowBox[{
+     RowBox[{"ind", "[", "e", "]"}], "=", 
+     RowBox[{"c", "[", 
+      RowBox[{"e", ",", "\"\<Industry\>\""}], "]"}]}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"takeLargestComp", "[", 
+     RowBox[{
+      RowBox[{"n_", "/;", 
+       RowBox[{"n", "\[Element]", 
+        TemplateBox[{},
+         "PositiveIntegers"]}]}], ",", "p_String"}], "]"}], ":=", 
+    "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"takeLargestComp", "[", 
+      RowBox[{"n", ",", "p"}], "]"}], "=", 
+     RowBox[{"EntityList", "[", "\[IndentingNewLine]", 
+      RowBox[{"EntityClass", "[", 
+       RowBox[{"\"\<Company\>\"", ",", 
+        RowBox[{"{", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"EntityProperty", "[", 
+           RowBox[{"\"\<Company\>\"", ",", "p"}], "]"}], "\[Rule]", 
+          RowBox[{"TakeLargest", "[", "n", "]"}]}], "\[IndentingNewLine]", 
+         "}"}]}], "]"}], "\n", "       ", "]"}]}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"predSane", "[", 
+     RowBox[{"e_", ",", "p_String"}], "]"}], ":=", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"predSane", "[", 
+      RowBox[{"e", ",", "p"}], "]"}], "=", "\[IndentingNewLine]", 
+     RowBox[{"Not", "[", 
+      RowBox[{"MissingQ", "[", 
+       RowBox[{"c", "[", 
+        RowBox[{"e", ",", "p"}], "]"}], "]"}], "]"}]}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"entitiesHaveComp", "[", 
+     RowBox[{
+      RowBox[{"n_", "/;", 
+       RowBox[{"n", "\[Element]", 
+        TemplateBox[{},
+         "PositiveIntegers"]}]}], ",", "p_String"}], "]"}], ":=", 
+    "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"entitiesHaveComp", "[", 
+      RowBox[{"n", ",", "p"}], "]"}], "=", "\[IndentingNewLine]", 
+     RowBox[{"Select", "[", 
+      RowBox[{
+       RowBox[{"takeLargestComp", "[", 
+        RowBox[{"n", ",", "p"}], "]"}], ",", 
+       RowBox[{
+        RowBox[{"predSane", "[", 
+         RowBox[{"#", ",", "p"}], "]"}], "&"}]}], "]"}]}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"deNature", "[", "e_", "]"}], ":=", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"deNature", "[", "e", "]"}], "=", "\[IndentingNewLine]", 
+     RowBox[{"QuantityMagnitude", "[", "e", "]"}]}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"gather", "[", 
+     RowBox[{"n_", ",", "p_String"}], "]"}], ":=", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"gather", "[", 
+      RowBox[{"n", ",", "p"}], "]"}], "=", "\[IndentingNewLine]", 
+     RowBox[{"GatherBy", "[", 
+      RowBox[{
+       RowBox[{"entitiesHaveComp", "[", 
+        RowBox[{"n", ",", "p"}], "]"}], ",", "ind"}], "]"}]}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"gathered", "[", 
+     RowBox[{"n_", ",", "p_String"}], "]"}], ":=", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"gathered", "[", 
+      RowBox[{"n", ",", "p"}], "]"}], "=", "\[IndentingNewLine]", 
+     RowBox[{"Table", "[", 
+      RowBox[{
+       RowBox[{"{", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"ind", "[", 
+          RowBox[{"First", "@", "g"}], "]"}], ",", "\[IndentingNewLine]", 
+         RowBox[{"deNature", "@", 
+          RowBox[{"Total", "@", 
+           RowBox[{"Map", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"c", "[", 
+               RowBox[{"#", ",", "p"}], "]"}], "&"}], ",", "g"}], "]"}]}]}]}],
+         "\[IndentingNewLine]", "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"g", ",", 
+         RowBox[{"gather", "[", 
+          RowBox[{"n", ",", "p"}], "]"}]}], "}"}]}], "\[IndentingNewLine]", 
+      "]"}]}]}], ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"sortGather", "[", 
+   RowBox[{"n_", ",", "a_", ",", "b_"}], "]"}], ":=", 
+  RowBox[{
+   RowBox[{"sortGather", "[", 
+    RowBox[{"n", ",", "a", ",", "b"}], "]"}], "=", 
+   RowBox[{"ReverseSortBy", "[", 
+    RowBox[{
+     RowBox[{"gather", "[", 
+      RowBox[{"n", ",", "a", ",", "b"}], "]"}], ",", 
+     RowBox[{
+      RowBox[{"Mean", "[", 
+       RowBox[{
+        RowBox[{"Last", "[", "#", "]"}], "[", "\"\<Values\>\"", "]"}], "]"}], 
+      "&"}]}], "]"}]}]}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.8139677178075666`*^9, 3.8139677891419096`*^9}, {
+   3.813967832222453*^9, 3.813967869872726*^9}, {3.813968479826545*^9, 
+   3.813968481197431*^9}, {3.813968524965656*^9, 3.8139685252107096`*^9}, {
+   3.8139685705233574`*^9, 3.8139685717556324`*^9}, {3.8139687193872986`*^9, 
+   3.813968815909074*^9}, {3.8139689984615974`*^9, 3.813969055948883*^9}, {
+   3.8139691660797634`*^9, 3.813969167374052*^9}, {3.8139692757510834`*^9, 
+   3.8139693018021*^9}, {3.813970624532262*^9, 3.81397073947114*^9}, {
+   3.813970795582196*^9, 3.8139707988109612`*^9}, {3.813970839418805*^9, 
+   3.813970861321767*^9}, {3.8139709021624403`*^9, 3.813970912979107*^9}, {
+   3.813971008772832*^9, 3.8139711271270003`*^9}, 3.8139713383646965`*^9, {
+   3.81397140648489*^9, 3.813971411497573*^9}, {3.8139716977694883`*^9, 
+   3.8139717012152915`*^9}, {3.81397209117347*^9, 3.8139720914015236`*^9}, {
+   3.8139721671285706`*^9, 3.8139721686694217`*^9}, {3.8139723382108536`*^9, 
+   3.8139723579289064`*^9}, {3.813972837775561*^9, 
+   3.813972858640546*^9}},ExpressionUUID->"261875c4-71fa-465d-97c9-\
+a1ae57991aa9"]
+},
+WindowSize->{958, 468},
+WindowMargins->{{Automatic, -7}, {Automatic, 0}},
+Magnification:>1.5 Inherited,
+FrontEndVersion->"12.1 for Microsoft Windows (64-bit) (March 18, 2020)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"e960cf93-7d2d-4482-955c-d90a722a986d"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 5926, 154, 1117, "Input",ExpressionUUID->"261875c4-71fa-465d-97c9-a1ae57991aa9"]
+}
+]
+*)
+

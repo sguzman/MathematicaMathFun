@@ -1,0 +1,488 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     17221,        480]
+NotebookOptionsPosition[     15929,        456]
+NotebookOutlinePosition[     16327,        472]
+CellTagsIndexPosition[     16284,        469]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"takeLargestByMarketCap", "[", 
+   RowBox[{"n_", "/;", 
+    RowBox[{"n", "\[Element]", 
+     TemplateBox[{},
+      "PositiveIntegers"]}]}], "]"}], ":=", 
+  RowBox[{
+   RowBox[{"takeLargestByMarketCap", "[", "n", "]"}], "=", 
+   RowBox[{"EntityList", "[", "\n", "       ", 
+    RowBox[{"EntityClass", "[", "\n", "        ", 
+     RowBox[{"\"\<Financial\>\"", ",", " ", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"EntityProperty", "[", 
+         RowBox[{"\"\<Financial\>\"", ",", " ", "\"\<MarketCap\>\""}], "]"}], 
+        " ", "->", " ", "\n", "          ", 
+        RowBox[{"TakeLargest", "[", "n", "]"}]}], "}"}]}], "\n", "        ", 
+     "]"}], "\n", "       ", "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.8138895182303143`*^9, 3.8138895894568033`*^9}, {
+  3.8138896308520823`*^9, 3.8138896440717535`*^9}},
+ CellLabel->
+  "(Debug) In[6]:=",ExpressionUUID->"044d4685-b0da-436e-a2a0-9a80aeb1a747"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"entitiesHaveComp", "[", 
+   RowBox[{
+    RowBox[{"n_", "/;", 
+     RowBox[{"n", "\[Element]", 
+      TemplateBox[{},
+       "PositiveIntegers"]}]}], ",", "f_"}], "]"}], ":=", 
+  RowBox[{
+   RowBox[{"entitiesHaveComp", "[", 
+    RowBox[{"n", ",", "f"}], "]"}], "=", 
+   RowBox[{"Select", "[", 
+    RowBox[{
+     RowBox[{"takeLargestByMarketCap", "[", "n", "]"}], ",", "f"}], 
+    "]"}]}]}]], "Input",
+ CellChangeTimes->{3.81389135433951*^9},
+ CellLabel->"In[24]:=",ExpressionUUID->"e2a6b3cb-86bc-4ce1-a7c5-5fb22904eaa5"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"predSane", "[", "e_", "]"}], ":=", 
+  RowBox[{
+   RowBox[{"predSane", "[", "e", "]"}], "=", 
+   RowBox[{"And", "[", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"Not", "[", 
+      RowBox[{"MissingQ", "[", 
+       RowBox[{"FinancialData", "[", 
+        RowBox[{"e", ",", "\"\<MarketCap\>\""}], "]"}], "]"}], "]"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"Not", "[", 
+      RowBox[{"MissingQ", "[", 
+       RowBox[{"FinancialData", "[", 
+        RowBox[{"e", ",", "\"\<Company\>\""}], "]"}], "]"}], "]"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"Not", "[", 
+      RowBox[{"MissingQ", "[", 
+       RowBox[{"CompanyData", "[", 
+        RowBox[{
+         RowBox[{"FinancialData", "[", 
+          RowBox[{"e", ",", "\"\<Company\>\""}], "]"}], ",", 
+         "\"\<Industry\>\""}], "]"}], "]"}], "]"}]}], "\[IndentingNewLine]", 
+    "]"}]}]}]], "Input",
+ CellChangeTimes->{3.813891029700616*^9},
+ CellLabel->"In[17]:=",ExpressionUUID->"21a6e49b-04d6-4eb8-a755-ad45d206c278"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"ind", "[", "e_", "]"}], ":=", 
+  RowBox[{
+   RowBox[{"ind", "[", "e", "]"}], "=", 
+   RowBox[{"CompanyData", "[", 
+    RowBox[{
+     RowBox[{"FinancialData", "[", 
+      RowBox[{"e", ",", "\"\<Company\>\""}], "]"}], ",", "\"\<Industry\>\""}],
+     "]"}]}]}]], "Input",
+ CellLabel->"In[25]:=",ExpressionUUID->"a058f608-a55d-4eac-b622-f001692fe81e"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"gathered", "[", "n_", "]"}], ":=", 
+  RowBox[{
+   RowBox[{"gathered", "[", "n", "]"}], "=", 
+   RowBox[{"Table", "[", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"ind", "[", 
+        RowBox[{"First", "@", "l"}], "]"}], ",", "l"}], "}"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"l", ",", 
+       RowBox[{"GatherBy", "[", 
+        RowBox[{
+         RowBox[{"entitiesHaveComp", "[", 
+          RowBox[{"n", ",", "predSane"}], "]"}], ",", "ind"}], "]"}]}], 
+      "}"}]}], "\[IndentingNewLine]", "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.81389175803691*^9, 3.813891770066238*^9}, 
+   3.813891855710309*^9},
+ CellLabel->"In[45]:=",ExpressionUUID->"c63415b8-2688-4d6c-8de9-86544c7f15a5"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"getTS", "[", 
+   RowBox[{"e_", ",", 
+    RowBox[{"a_", "/;", 
+     RowBox[{"a", "\[Element]", 
+      TemplateBox[{},
+       "PositiveIntegers"]}]}], ",", 
+    RowBox[{"b_", "/;", 
+     RowBox[{"b", "\[Element]", 
+      TemplateBox[{},
+       "PositiveIntegers"]}]}]}], "]"}], ":=", 
+  RowBox[{
+   RowBox[{"getTS", "[", 
+    RowBox[{"e", ",", "a", ",", "b"}], "]"}], "=", 
+   RowBox[{"FinancialData", "[", 
+    RowBox[{"e", ",", "\"\<MarketCap\>\"", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", "a", "}"}], ",", 
+       RowBox[{"{", "b", "}"}]}], "}"}]}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.813892776932253*^9, 3.8138928131373596`*^9}},
+ CellLabel->"In[48]:=",ExpressionUUID->"dc135a8b-520b-44e5-b6a2-d38e86beb735"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"getTSs", "[", 
+   RowBox[{"es_", ",", "a_", ",", "b_"}], "]"}], ":=", 
+  RowBox[{
+   RowBox[{"getTSs", "[", 
+    RowBox[{"es", ",", "a", ",", "b"}], "]"}], "=", 
+   RowBox[{"Map", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"getTS", "[", 
+       RowBox[{"#", ",", "a", ",", "b"}], "]"}], "&"}], ",", "es"}], 
+    "]"}]}]}]], "Input",
+ CellLabel->"In[55]:=",ExpressionUUID->"83776e8d-c056-4dd8-8440-07db6af7188b"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"merged", "[", 
+   RowBox[{"es_", ",", "a_", ",", "b_"}], "]"}], ":=", 
+  RowBox[{
+   RowBox[{"merged", "[", 
+    RowBox[{"es", ",", "a", ",", "b"}], "]"}], "=", 
+   RowBox[{"TimeSeriesThread", "[", 
+    RowBox[{"Total", ",", 
+     RowBox[{"Map", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"getTS", "[", 
+         RowBox[{"#", ",", "a", ",", "b"}], "]"}], "&"}], ",", "es"}], 
+      "]"}]}], "]"}]}]}]], "Input",
+ CellLabel->"In[65]:=",ExpressionUUID->"3d67a8de-8c89-4e93-b08f-c32a741b5e2a"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"gather", "[", 
+   RowBox[{"n_", ",", "a_", ",", "b_"}], "]"}], ":=", 
+  RowBox[{
+   RowBox[{"gather", "[", 
+    RowBox[{"n", ",", "a", ",", "b"}], "]"}], "=", 
+   RowBox[{"Table", "[", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"ind", "[", 
+        RowBox[{"First", "@", "l"}], "]"}], ",", 
+       RowBox[{"merged", "[", 
+        RowBox[{"l", ",", "a", ",", "b"}], "]"}]}], "}"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"l", ",", 
+       RowBox[{"GatherBy", "[", 
+        RowBox[{
+         RowBox[{"entitiesHaveComp", "[", 
+          RowBox[{"n", ",", "predSane"}], "]"}], ",", "ind"}], "]"}]}], 
+      "}"}]}], "\[IndentingNewLine]", "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.813929028768963*^9, 3.8139290309829845`*^9}},
+ CellLabel->"In[66]:=",ExpressionUUID->"c32f66f6-5878-4cba-9074-adfd4ccedc2a"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"sortGather", "[", 
+   RowBox[{"n_", ",", "a_", ",", "b_"}], "]"}], ":=", 
+  RowBox[{
+   RowBox[{"sortGather", "[", 
+    RowBox[{"n", ",", "a", ",", "b"}], "]"}], "=", 
+   RowBox[{"ReverseSortBy", "[", 
+    RowBox[{
+     RowBox[{"gather", "[", 
+      RowBox[{"n", ",", "a", ",", "b"}], "]"}], ",", 
+     RowBox[{
+      RowBox[{"Mean", "[", 
+       RowBox[{
+        RowBox[{"Last", "[", "#", "]"}], "[", "\"\<Values\>\"", "]"}], "]"}], 
+      "&"}]}], "]"}]}]}]], "Input",
+ CellLabel->"In[71]:=",ExpressionUUID->"861dca02-eac6-4070-bd98-9716aa3a17f3"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"takeLargestByMarketCap", "[", 
+   RowBox[{"n_", "/;", 
+    RowBox[{"n", "\[Element]", 
+     TemplateBox[{},
+      "PositiveIntegers"]}]}], "]"}], ":=", 
+  RowBox[{
+   RowBox[{"takeLargestByMarketCap", "[", "n", "]"}], "=", 
+   RowBox[{"EntityList", "[", "\n", "       ", 
+    RowBox[{"EntityClass", "[", "\n", "        ", 
+     RowBox[{"\"\<Financial\>\"", ",", " ", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"EntityProperty", "[", 
+         RowBox[{"\"\<Financial\>\"", ",", " ", "\"\<MarketCap\>\""}], "]"}], 
+        " ", "->", " ", "\n", "          ", 
+        RowBox[{"TakeLargest", "[", "n", "]"}]}], "}"}]}], "\n", "        ", 
+     "]"}], "\n", "       ", "]"}]}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"entitiesHaveComp", "[", 
+   RowBox[{
+    RowBox[{"n_", "/;", 
+     RowBox[{"n", "\[Element]", 
+      TemplateBox[{},
+       "PositiveIntegers"]}]}], ",", "f_"}], "]"}], ":=", 
+  RowBox[{
+   RowBox[{"entitiesHaveComp", "[", 
+    RowBox[{"n", ",", "f"}], "]"}], "=", 
+   RowBox[{"Select", "[", 
+    RowBox[{
+     RowBox[{"takeLargestByMarketCap", "[", "n", "]"}], ",", "f"}], 
+    "]"}]}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"predSane", "[", "e_", "]"}], ":=", 
+  RowBox[{
+   RowBox[{"predSane", "[", "e", "]"}], "=", 
+   RowBox[{"And", "[", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"Not", "[", 
+      RowBox[{"MissingQ", "[", 
+       RowBox[{"FinancialData", "[", 
+        RowBox[{"e", ",", "\"\<MarketCap\>\""}], "]"}], "]"}], "]"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"Not", "[", 
+      RowBox[{"MissingQ", "[", 
+       RowBox[{"FinancialData", "[", 
+        RowBox[{"e", ",", "\"\<Company\>\""}], "]"}], "]"}], "]"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"Not", "[", 
+      RowBox[{"MissingQ", "[", 
+       RowBox[{"CompanyData", "[", 
+        RowBox[{
+         RowBox[{"FinancialData", "[", 
+          RowBox[{"e", ",", "\"\<Company\>\""}], "]"}], ",", 
+         "\"\<Industry\>\""}], "]"}], "]"}], "]"}]}], "\[IndentingNewLine]", 
+    "]"}]}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"ind", "[", "e_", "]"}], ":=", 
+  RowBox[{
+   RowBox[{"ind", "[", "e", "]"}], "=", 
+   RowBox[{"CompanyData", "[", 
+    RowBox[{
+     RowBox[{"FinancialData", "[", 
+      RowBox[{"e", ",", "\"\<Company\>\""}], "]"}], ",", "\"\<Industry\>\""}],
+     "]"}]}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"getTS", "[", 
+   RowBox[{"e_", ",", 
+    RowBox[{"a_", "/;", 
+     RowBox[{"a", "\[Element]", 
+      TemplateBox[{},
+       "PositiveIntegers"]}]}], ",", 
+    RowBox[{"b_", "/;", 
+     RowBox[{"b", "\[Element]", 
+      TemplateBox[{},
+       "PositiveIntegers"]}]}]}], "]"}], ":=", 
+  RowBox[{
+   RowBox[{"getTS", "[", 
+    RowBox[{"e", ",", "a", ",", "b"}], "]"}], "=", 
+   RowBox[{"FinancialData", "[", 
+    RowBox[{"e", ",", "\"\<MarketCap\>\"", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", "a", "}"}], ",", 
+       RowBox[{"{", "b", "}"}]}], "}"}]}], "]"}]}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"merged", "[", 
+   RowBox[{"es_", ",", "a_", ",", "b_"}], "]"}], ":=", 
+  RowBox[{
+   RowBox[{"merged", "[", 
+    RowBox[{"es", ",", "a", ",", "b"}], "]"}], "=", 
+   RowBox[{"TimeSeriesThread", "[", 
+    RowBox[{"Total", ",", 
+     RowBox[{"Map", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"getTS", "[", 
+         RowBox[{"#", ",", "a", ",", "b"}], "]"}], "&"}], ",", "es"}], 
+      "]"}]}], "]"}]}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"deNature", "[", "e_", "]"}], ":=", 
+  RowBox[{
+   RowBox[{"deNature", "[", "e", "]"}], "=", 
+   RowBox[{"TimeSeriesMap", "[", 
+    RowBox[{"QuantityMagnitude", ",", "e"}], "]"}]}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"gather", "[", 
+   RowBox[{"n_", ",", "a_", ",", "b_"}], "]"}], ":=", 
+  RowBox[{
+   RowBox[{"gather", "[", 
+    RowBox[{"n", ",", "a", ",", "b"}], "]"}], "=", 
+   RowBox[{"Table", "[", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"ind", "[", 
+        RowBox[{"First", "@", "l"}], "]"}], ",", 
+       RowBox[{"deNature", "@", 
+        RowBox[{"merged", "[", 
+         RowBox[{"l", ",", "a", ",", "b"}], "]"}]}]}], "}"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"l", ",", 
+       RowBox[{"GatherBy", "[", 
+        RowBox[{
+         RowBox[{"entitiesHaveComp", "[", 
+          RowBox[{"n", ",", "predSane"}], "]"}], ",", "ind"}], "]"}]}], 
+      "}"}]}], "\[IndentingNewLine]", "]"}]}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"summed", "[", "e_", "]"}], ":=", 
+  RowBox[{
+   RowBox[{"summed", "[", "e", "]"}], "=", 
+   RowBox[{"TimeSeriesThread", "[", 
+    RowBox[{"Total", ",", "e"}], "]"}]}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"sortGather", "[", 
+   RowBox[{"n_", ",", "a_", ",", "b_"}], "]"}], ":=", 
+  RowBox[{
+   RowBox[{"sortGather", "[", 
+    RowBox[{"n", ",", "a", ",", "b"}], "]"}], "=", 
+   RowBox[{"ReverseSortBy", "[", 
+    RowBox[{
+     RowBox[{"gather", "[", 
+      RowBox[{"n", ",", "a", ",", "b"}], "]"}], ",", 
+     RowBox[{
+      RowBox[{"Mean", "[", 
+       RowBox[{
+        RowBox[{"Last", "[", "#", "]"}], "[", "\"\<Values\>\"", "]"}], "]"}], 
+      "&"}]}], "]"}]}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"norm", "[", 
+   RowBox[{"e_", ",", "t_"}], "]"}], ":=", 
+  RowBox[{
+   RowBox[{"norm", "[", 
+    RowBox[{"e", ",", "t"}], "]"}], "=", 
+   RowBox[{"TimeSeriesThread", "[", 
+    RowBox[{
+     RowBox[{"Apply", "[", "Divide", "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"e", ",", "t"}], "}"}]}], "]"}]}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"normed", "[", 
+   RowBox[{"n_", ",", "a_", ",", "b_"}], "]"}], ":=", 
+  RowBox[{
+   RowBox[{"normed", "[", 
+    RowBox[{"n", ",", "a", ",", "b"}], "]"}], "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"First", "@", "s"}], ",", 
+       RowBox[{"norm", "[", 
+        RowBox[{
+         RowBox[{"Last", "@", "s"}], ",", 
+         RowBox[{"summed", "[", 
+          RowBox[{"Last", "/@", 
+           RowBox[{"sortGather", "[", 
+            RowBox[{"n", ",", "a", ",", "b"}], "]"}]}], "]"}]}], "]"}]}], 
+      "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"s", ",", 
+       RowBox[{"sortGather", "[", 
+        RowBox[{"n", ",", "a", ",", "b"}], "]"}]}], "}"}]}], 
+    "]"}]}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"plot", "[", "d_", "]"}], ":=", 
+  RowBox[{
+   RowBox[{"plot", "[", "d", "]"}], "=", 
+   RowBox[{"With", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"data", "=", "d"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"With", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"tooltip", "=", 
+          RowBox[{"Table", "[", 
+           RowBox[{
+            RowBox[{"Tooltip", "[", 
+             RowBox[{
+              RowBox[{"Last", "@", "t"}], ",", 
+              RowBox[{"First", "@", "t"}]}], "]"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"t", ",", "data"}], "}"}]}], "]"}]}], ",", 
+         RowBox[{"labels", "=", 
+          RowBox[{"First", "/@", "data"}]}]}], "}"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"DateListPlot", "[", 
+        RowBox[{"tooltip", ",", "\[IndentingNewLine]", 
+         RowBox[{"PlotRange", "\[Rule]", "Full"}], ",", "\[IndentingNewLine]", 
+         RowBox[{"PlotTheme", "\[Rule]", "\"\<Marketing\>\""}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"Joined", "\[Rule]", "False"}], ",", "\[IndentingNewLine]", 
+         RowBox[{"AspectRatio", "\[Rule]", 
+          FractionBox["1", "3"]}], ",", "\[IndentingNewLine]", 
+         RowBox[{"ImageSize", "\[Rule]", "Full"}], ",", "\[IndentingNewLine]", 
+         RowBox[{"PlotLegends", "\[Rule]", "labels"}]}], 
+        "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]", "]"}]}], 
+    "]"}]}]}]}], "Input",
+ CellChangeTimes->{{3.8139292781538134`*^9, 3.8139293296583614`*^9}, {
+  3.813929639080641*^9, 3.8139296392466774`*^9}, {3.8139327019353485`*^9, 
+  3.8139327021343927`*^9}, {3.8139338684645915`*^9, 3.813933884607636*^9}, {
+  3.813934068515211*^9, 3.8139340689253025`*^9}, {3.8139344849223323`*^9, 
+  3.8139344863656545`*^9}, {3.8139347286543283`*^9, 3.8139347294682674`*^9}, {
+  3.8139371021786394`*^9, 3.813937104180086*^9}, {3.813937184154433*^9, 
+  3.8139371850376296`*^9}, {3.813937392241081*^9, 
+  3.813937403530841*^9}},ExpressionUUID->"0906057e-b351-42e3-9a05-\
+4845aea9a931"]
+},
+WindowSize->{958, 988},
+WindowMargins->{{Automatic, -7}, {Automatic, 0}},
+FrontEndVersion->"12.1 for Microsoft Windows (64-bit) (March 18, 2020)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"03c61b0b-6e41-40e9-be62-0be2c663db8b"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 942, 22, 125, "Input",ExpressionUUID->"044d4685-b0da-436e-a2a0-9a80aeb1a747"],
+Cell[1503, 44, 554, 16, 30, "Input",ExpressionUUID->"e2a6b3cb-86bc-4ce1-a7c5-5fb22904eaa5"],
+Cell[2060, 62, 1024, 26, 105, "Input",ExpressionUUID->"21a6e49b-04d6-4eb8-a755-ad45d206c278"],
+Cell[3087, 90, 382, 10, 28, "Input",ExpressionUUID->"a058f608-a55d-4eac-b622-f001692fe81e"],
+Cell[3472, 102, 788, 21, 86, "Input",ExpressionUUID->"c63415b8-2688-4d6c-8de9-86544c7f15a5"],
+Cell[4263, 125, 772, 22, 30, "Input",ExpressionUUID->"dc135a8b-520b-44e5-b6a2-d38e86beb735"],
+Cell[5038, 149, 450, 13, 28, "Input",ExpressionUUID->"83776e8d-c056-4dd8-8440-07db6af7188b"],
+Cell[5491, 164, 535, 15, 28, "Input",ExpressionUUID->"3d67a8de-8c89-4e93-b08f-c32a741b5e2a"],
+Cell[6029, 181, 909, 24, 86, "Input",ExpressionUUID->"c32f66f6-5878-4cba-9074-adfd4ccedc2a"],
+Cell[6941, 207, 584, 16, 28, "Input",ExpressionUUID->"861dca02-eac6-4070-bd98-9716aa3a17f3"],
+Cell[7528, 225, 8397, 229, 764, "Input",ExpressionUUID->"0906057e-b351-42e3-9a05-4845aea9a931"]
+}
+]
+*)
+
