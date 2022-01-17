@@ -1,0 +1,1170 @@
+#!/usr/bin/env wolframscript
+(* ::Package:: *)
+
+(* ::Input:: *)
+(*ComplexPlot[*)
+(*z^2,{z,-2-2I,2+2I}*)
+(*]*)
+
+
+(* ::Input:: *)
+(*ComplexPlot[*)
+(*z^2,{z,-2-2I,2+2I}*)
+(*,PlotLegends->Automatic*)
+(*]*)
+
+
+(* ::Input:: *)
+(*VectorPlot[*)
+(*{x,x^2},*)
+(*{x,-2,2},{y,-2,2}*)
+(*]*)
+
+
+(* ::Input:: *)
+(*ComplexPlot[*)
+(*z^2,{z,-2-2I,2+2I}*)
+(*,PlotLegends->Automatic*)
+(*]*)
+
+
+(* ::Input:: *)
+(*VectorPlot[*)
+(*{1,2x},*)
+(*{x,-2,2},{y,-2,2}*)
+(*]*)
+
+
+(* ::Input:: *)
+(*z^2*)
+
+
+(* ::Input:: *)
+(*Show[{*)
+(*ComplexPlot[*)
+(*z^2*)
+(*,{z,-2-2I,2+2I}*)
+(*,PlotLegends->Automatic*)
+(*],*)
+(*VectorPlot[*)
+(*{1,2x},*)
+(*{x,-2,2},{y,-2,2}*)
+(*]*)
+(*}]*)
+
+
+(* ::Input:: *)
+(*(a+b I)^2*)
+
+
+(* ::Input:: *)
+(*Expand[(a+I b)^2]*)
+
+
+(* ::Input:: *)
+(*ReIm[a^2+2 I a b-b^2]*)
+
+
+(* ::Input:: *)
+(*ComplexExpand[ReIm[a^2+2 I a b-b^2]]*)
+
+
+(* ::Input:: *)
+(*VectorPlot[*)
+(*{x^2-y^2,2 x y},*)
+(*{x,-2,2},{y,-2,2}*)
+(*]*)
+
+
+(* ::Input:: *)
+(*{a^2-b^2,2 a b}/.{a->x,b->y}*)
+
+
+(* ::Input:: *)
+(*Show[{*)
+(*ComplexPlot[*)
+(*z^2*)
+(*,{z,-2-2I,2+2I}*)
+(*,PlotLegends->Automatic*)
+(*],*)
+(*VectorPlot[*)
+(*{x^2-y^2,2 x y},*)
+(*{x,-2,2},{y,-2,2}*)
+(*]*)
+(*}]*)
+
+
+(* ::Input:: *)
+(*{x^2-y^2,2 x y}/.y->x*)
+
+
+(* ::Input:: *)
+(*Integrate[{0,2 x^2},x]*)
+
+
+(* ::Input:: *)
+(*(2 x^3)/3*)
+
+
+(* ::Input:: *)
+(*Plot[(2 x^3)/3,{x,-1.28512,1.28512}]*)
+
+
+(* ::Input:: *)
+(*{x^2-y^2,2 x y}/.y->Exp[x]*)
+
+
+(* ::Input:: *)
+(*ParametricPlot[{-E^(2 x)+x^2,2 E^x x},{x,-18.,18.}]*)
+
+
+(* ::Input:: *)
+(*With[{*)
+(*f=Function[x,x]*)
+(*},*)
+(*With[{*)
+(*vec=Function[{x,y},*)
+(*ComplexExpand[ReIm[f[x+y I]]]]*)
+(*},*)
+(*Show[{*)
+(*ComplexPlot[*)
+(*f[z]*)
+(*,{z,-2-2I,2+2I}*)
+(*,PlotLegends->Automatic*)
+(*],*)
+(*VectorPlot[*)
+(*vec[x,y],*)
+(*{x,-2,2},{y,-2,2}*)
+(*]*)
+(*}]*)
+(*]*)
+(*]*)
+
+
+(* ::Input:: *)
+(*FromPolarCoordinates[{x,x}]*)
+
+
+(* ::Input:: *)
+(*With[{*)
+(*f=Function[x,x]*)
+(*},*)
+(*With[{*)
+(*vec=Function[{x,y},*)
+(*ComplexExpand[ReIm[f[x+y I]]]]*)
+(*},*)
+(*Show[{*)
+(*ComplexPlot[*)
+(*f[z]*)
+(*,{z,-2-2I,2+2I}*)
+(*,PlotLegends->Automatic*)
+(*],*)
+(*VectorPlot[*)
+(*{x Cos[x],x Sin[x]},*)
+(*{x,-2,2},{y,-2,2}*)
+(*]*)
+(*}]*)
+(*]*)
+(*]*)
+
+
+(* ::Input:: *)
+(*Curl[{f[x,y],g[x,y]},{x,y}]*)
+
+
+(* ::Input:: *)
+(*z^2/.z->a+b I*)
+
+
+(* ::Input:: *)
+(*Expand[(a+I b)^2]*)
+
+
+(* ::Input:: *)
+(*ComplexExpand[ReIm[a^2+2 I a b-b^2]]*)
+
+
+(* ::Input:: *)
+(*With[{*)
+(*f=Function[x,x^2]*)
+(*},*)
+(*With[{*)
+(*vec=Function[{x,y},*)
+(*ComplexExpand[ReIm[f[x+y I]]]]*)
+(*},*)
+(*Show[{*)
+(*ComplexPlot[*)
+(*f[z]*)
+(*,{z,-2-2I,2+2I}*)
+(*,PlotLegends->Automatic*)
+(*],*)
+(*VectorPlot[*)
+(*vec[x,y],*)
+(*{x,-2,2},{y,-2,2}*)
+(*]*)
+(*}]*)
+(*]*)
+(*]*)
+
+
+(* ::Input:: *)
+(*ComplexExpand[ReIm[Expand[a+b I]]]*)
+
+
+(* ::Input:: *)
+(*ComplexExpand[ReIm[Expand[(x+y I)^2]]]*)
+
+
+(* ::Input:: *)
+(*{x^2-y^2,2 x y}/.y->x*)
+
+
+(* ::Input:: *)
+(*Integrate[2 x^2,x]*)
+
+
+(* ::Input:: *)
+(*{x^2-y^2,2 x y}/.y->1*)
+
+
+(* ::Input:: *)
+(*ComplexExpand[ReIm[Expand[(x+y/2 I)^2]]]*)
+
+
+(* ::Input:: *)
+(*{x^2-y^2,2 x y}/.y->1*)
+
+
+(* ::Input:: *)
+(*r Exp[r I]*)
+
+
+(* ::Input:: *)
+(*D[r Exp[r I],r]*)
+
+
+(* ::Input:: *)
+(*{x^2-y^2,2 x y}/.y->x*)
+
+
+(* ::Input:: *)
+(*Grad[{x^2-y^2,2 x y},{x,y}]*)
+
+
+(* ::Input:: *)
+(*Curl[{x^2-y^2,2 x y},{x,y}]*)
+
+
+(* ::Input:: *)
+(*Div[{x^2-y^2,2 x y},{x,y}]*)
+
+
+(* ::Input:: *)
+(*ToPolarCoordinates[{x^2-y^2/4,x y}]*)
+
+
+(* ::Input:: *)
+(*Curl[{Sqrt[x^2 y^2+(x^2-y^2/4)^2],ArcTan[x^2-y^2/4,x y]},{x,y}]*)
+
+
+(* ::Input:: *)
+(*{x^2-y^2,2 x y}/.y->x^2*)
+
+
+(* ::Input:: *)
+(*ParametricPlot[{x^2-x^4,2 x^3},{x,-2.44949,2.44949}]*)
+
+
+(* ::Input:: *)
+(*{x^2-y^2,2 x y}*)
+
+
+(* ::Input:: *)
+(*ParametricPlot[{x^2-x^4,2 x^3},{x,-2,2}]*)
+
+
+(* ::Input:: *)
+(*ParametricPlot[{*)
+(*{x^2-x^4,2 x^3},*)
+(*{x^2-y^2,2 x y}*)
+(*},{x,-2,2},{y,-2,2}]*)
+
+
+(* ::Input:: *)
+(*D[{x^2-y^2,2 x y},x]*)
+
+
+(* ::Input:: *)
+(*Normal[CoefficientArrays[{2 x,2 y},{x,y}][[2]]]*)
+
+
+(* ::Input:: *)
+(*Manipulate[*)
+(*ParametricPlot[{*)
+(*{x^2-y^2,2 x y}*)
+(*},{x,-2,2}*)
+(*],{y,-2,2}]*)
+
+
+(* ::Input:: *)
+(*z^2/.z->(x+y I)*)
+
+
+(* ::Input:: *)
+(*Expand[(x+I y)^2]*)
+
+
+(* ::Input:: *)
+(*ComplexExpand@ReIm[x^2+2 I x y-y^2]*)
+
+
+(* ::Input:: *)
+(*2z/.z->(x+y I)*)
+
+
+(* ::Input:: *)
+(*ComplexExpand@ReIm[2z/.z->(x+y I)]*)
+
+
+(* ::Input:: *)
+(*With[{*)
+(*f=Function[x,2x]*)
+(*},*)
+(*With[{*)
+(*vec=Function[{x,y},*)
+(*ComplexExpand[ReIm[f[x+y I]]]]*)
+(*},*)
+(*Show[{*)
+(*ComplexPlot[*)
+(*f[z]*)
+(*,{z,-2-2I,2+2I}*)
+(*,PlotLegends->Automatic*)
+(*],*)
+(*VectorPlot[*)
+(*vec[x,y],*)
+(*{x,-2,2},{y,-2,2}*)
+(*]*)
+(*}]*)
+(*]*)
+(*]*)
+
+
+(* ::Input:: *)
+(*{2 x,2 x}*)
+
+
+(* ::Input:: *)
+(*Integrate[{2 x,2 x},x]*)
+
+
+(* ::Input:: *)
+(*ScalingTransform[RotationTransform[{x,x^2}]]*)
+
+
+(* ::Input:: *)
+(*2x*)
+
+
+(* ::Input:: *)
+(*ComplexPlot3D[*)
+(*z^2*)
+(*,{z,-2-2I,2+2I}]*)
+
+
+(* ::Input:: *)
+(*2z/.z->(x+y I)*)
+
+
+(* ::Input:: *)
+(*Expand[2 (x+I y)]*)
+
+
+(* ::Input:: *)
+(*ReIm[2 x+2 I y]*)
+
+
+(* ::Input:: *)
+(*ComplexExpand@ReIm[2 x+2 I y]*)
+
+
+(* ::Input:: *)
+(*ToPolarCoordinates[{2 x,2 y}]*)
+
+
+(* ::Input:: *)
+(*FullSimplify[*)
+(*ToPolarCoordinates[{2 x,2 y}]*)
+(*,{x,y}\[Element]Reals]*)
+
+
+(* ::Input:: *)
+(**)
+
+
+(* ::Input:: *)
+(*{2 Sqrt[x^2+y^2],ArcTan[x,y]}/.y->x*)
+
+
+(* ::Input:: *)
+(*FullSimplify[*)
+(*{2 Sqrt[2] Sqrt[x^2],ArcTan[x,x]}*)
+(*,{x,y}\[Element]Reals]*)
+
+
+(* ::Input:: *)
+(**)
+
+
+(* ::Input:: *)
+(*D[{2 Sqrt[2] Abs[x],ArcTan[x,x]},x]*)
+
+
+(* ::Input:: *)
+(*ComplexExpand@ReIm[z^2/.z->(x+y I)]*)
+
+
+(* ::Input:: *)
+(*FullSimplify[*)
+(*ToPolarCoordinates@{x^2-y^2,2 x y}*)
+(*,{x,y}\[Element]Reals]*)
+
+
+(* ::Input:: *)
+(*{x^2+y^2,ArcTan[x^2-y^2,2 x y]}/.y->x^2*)
+
+
+(* ::Input:: *)
+(*FullSimplify[*)
+(*{x^2+x^4,ArcTan[x^2-x^4,2 x^3]}*)
+(*,{x,y}\[Element]Reals]*)
+
+
+(* ::Input:: *)
+(*D[{x^2+x^4,ArcTan[x^2-x^4,2 x^3]},x]*)
+
+
+(* ::Input:: *)
+(*Plot[*)
+(*{2 x+4 x^3,-((2 x^3 (2 x-4 x^3))/(4 x^6+(x^2-x^4)^2))+(6 x^2 (x^2-x^4))/(4 x^6+(x^2-x^4)^2)}*)
+(*,{x,-3,3}]*)
+
+
+(* ::Input:: *)
+(*-((2 x^3 (2 x-4 x^3))/(4 x^6+(x^2-x^4)^2))+(6 x^2 (x^2-x^4))/(4 x^6+(x^2-x^4)^2)/.x->0*)
+
+
+(* ::Input:: *)
+(*Plot[*)
+(*{2 x+4 x^3,-((2 x^3 (2 x-4 x^3))/(4 x^6+(x^2-x^4)^2))+(6 x^2 (x^2-x^4))/(4 x^6+(x^2-x^4)^2)}*)
+(*,{x,-2,2}]*)
+
+
+(* ::Input:: *)
+(*FullSimplify[*)
+(*{2 x+4 x^3,-((2 x^3 (2 x-4 x^3))/(4 x^6+(x^2-x^4)^2))+(6 x^2 (x^2-x^4))/(4 x^6+(x^2-x^4)^2)}*)
+(*,x\[Element]Reals]*)
+
+
+(* ::Input:: *)
+(*Plot[*)
+(*{2 (x+2 x^3),2/(1+x^2)}*)
+(*,{x,-2,2}]*)
+
+
+(* ::Input:: *)
+(*2/(1+x^2)/.x->0*)
+
+
+(* ::Input:: *)
+(*NIntegrate[2/(1+x^2),{x,0,10}]*)
+
+
+(* ::Input:: *)
+(*NIntegrate[2/(1+x^2),{x,0,100}]*)
+
+
+(* ::Input:: *)
+(*NIntegrate[2/(1+x^2),{x,0,1000}]*)
+
+
+(* ::Input:: *)
+(*Limit[Integrate[2/(1+x^2),{x,0,a}],a->\[Infinity]]*)
+
+
+(* ::Input:: *)
+(*Limit[Integrate[2/(1+x^2),{x,-a,a}],a->\[Infinity]]*)
+
+
+(* ::Input:: *)
+(**)
+
+
+(* ::Input:: *)
+(*With[{*)
+(*func=Function[x,x]*)
+(*},*)
+(*With[{*)
+(*polar=*)
+(*FullSimplify[*)
+(*ToPolarCoordinates@*)
+(*ComplexExpand@*)
+(*ReIm@*)
+(*func[x+y I]*)
+(*,{x,y}\[Element]Reals*)
+(*]*)
+(*},*)
+(*With[{*)
+(*d=FullSimplify[*)
+(*D[polar/.y->func[x],x]*)
+(*,x\[Element]Reals*)
+(*]*)
+(*},*)
+(*d*)
+(*]*)
+(*]*)
+(*]*)
+
+
+(* ::Input:: *)
+(**)
+
+
+(* ::Input:: *)
+(*N@Sqrt[2]*)
+
+
+(* ::Input:: *)
+(*With[{*)
+(*func=Function[x,x^2]*)
+(*},*)
+(*With[{*)
+(*polar=*)
+(*FullSimplify[*)
+(*ToPolarCoordinates@*)
+(*ComplexExpand@*)
+(*ReIm@*)
+(*func[x+y I]*)
+(*,{x,y}\[Element]Reals*)
+(*]*)
+(*},*)
+(*With[{*)
+(*d=FullSimplify[*)
+(*D[polar/.y->func[x],x]*)
+(*,x\[Element]Reals*)
+(*]*)
+(*},*)
+(*Plot[*)
+(*d*)
+(*,{x,-3,3}*)
+(*,PlotLegends->d*)
+(*,AxesLabel->{x,func[x]}*)
+(*]*)
+(*]*)
+(*]*)
+(*]*)
+
+
+(* ::Input:: *)
+(*With[{*)
+(*func=Function[x,x^3-x]*)
+(*},*)
+(*With[{*)
+(*polar=*)
+(*FullSimplify[*)
+(*ToPolarCoordinates@*)
+(*ComplexExpand@*)
+(*ReIm@*)
+(*func[x+y I]*)
+(*,{x,y}\[Element]Reals*)
+(*]*)
+(*},*)
+(*With[{*)
+(*d=FullSimplify[*)
+(*D[polar/.y->func[x],x]*)
+(*,x\[Element]Reals*)
+(*]*)
+(*},*)
+(*Plot[*)
+(*d*)
+(*,{x,-3,3}*)
+(*,PlotLegends->d*)
+(*,AxesLabel->{x,func[x]}*)
+(*]*)
+(*]*)
+(*]*)
+(*]*)
+
+
+(* ::Input:: *)
+(*With[{*)
+(*func=Function[x,0]*)
+(*},*)
+(*With[{*)
+(*polar=*)
+(*FullSimplify[*)
+(*ToPolarCoordinates@*)
+(*ComplexExpand@*)
+(*ReIm@*)
+(*func[x+y I]*)
+(*,{x,y}\[Element]Reals*)
+(*]*)
+(*},*)
+(*With[{*)
+(*d=FullSimplify[*)
+(*D[polar/.y->func[x],x]*)
+(*,x\[Element]Reals*)
+(*]*)
+(*},*)
+(*Plot[*)
+(*d*)
+(*,{x,-3,3}*)
+(*,PlotLegends->d*)
+(*,AxesLabel->{x,func[x]}*)
+(*]*)
+(*]*)
+(*]*)
+(*]*)
+
+
+(* ::Input:: *)
+(*With[{*)
+(*func=Function[x,1/x]*)
+(*},*)
+(*With[{*)
+(*polar=*)
+(*FullSimplify[*)
+(*ToPolarCoordinates@*)
+(*ComplexExpand@*)
+(*ReIm@*)
+(*func[x+y I]*)
+(*,{x,y}\[Element]Reals*)
+(*]*)
+(*},*)
+(*With[{*)
+(*d=FullSimplify[*)
+(*D[polar/.y->func[x],x]*)
+(*,x\[Element]Reals*)
+(*]*)
+(*},*)
+(*Plot[*)
+(*d*)
+(*,{x,-3,3}*)
+(*,PlotLegends->d*)
+(*,PlotLabels->{Length,Rotation}*)
+(*,AxesLabel->{x,func[x]}*)
+(*]*)
+(*]*)
+(*]*)
+(*]*)
+
+
+(* ::Input:: *)
+(*With[{*)
+(*func=Function[x,1/x]*)
+(*},*)
+(*With[{*)
+(*polar=*)
+(*FullSimplify[*)
+(*ToPolarCoordinates@*)
+(*ComplexExpand@*)
+(*ReIm@*)
+(*func[x+func[x] I]*)
+(*,x\[Element]Reals]*)
+(*},*)
+(*With[{*)
+(*d=FullSimplify[*)
+(*D[polar,x]*)
+(*,x\[Element]Reals]*)
+(*},*)
+(*Plot[*)
+(*polar*)
+(*,{x,-3,3}*)
+(*,PlotLegends->polar*)
+(*,PlotLabels->{Length,Rotation}*)
+(*,AxesLabel->{x,func[x]}*)
+(*]*)
+(*]*)
+(*]*)
+(*]*)
+
+
+(* ::Input:: *)
+(*With[{*)
+(*func=Function[x,x]*)
+(*},*)
+(*With[{*)
+(*polar=*)
+(*FullSimplify[*)
+(*ToPolarCoordinates@*)
+(*ComplexExpand@*)
+(*ReIm@*)
+(*func[x+func[x] I]*)
+(*,x\[Element]Reals]*)
+(*},*)
+(*With[{*)
+(*d=FullSimplify[*)
+(*D[polar,x]*)
+(*,x\[Element]Reals]*)
+(*},*)
+(*With[{*)
+(*all={Splice@polar,Splice@d}*)
+(*},*)
+(*Plot[*)
+(*all*)
+(*,{x,-3,3}*)
+(*,PlotLegends->all*)
+(*,PlotLabels->{len,rot,"\[PartialD] len","\[PartialD] rot"}*)
+(*,AxesLabel->{x,func[x]}*)
+(*]*)
+(*]*)
+(*]*)
+(*]*)
+(*]*)
+
+
+(* ::Input:: *)
+(**)
+
+
+(* ::Input:: *)
+(*Subscript[, \[Placeholder]]\[Placeholder]*)
+
+
+(* ::Input:: *)
+(*With[{*)
+(*func=Function[x,1/x]*)
+(*},*)
+(*With[{*)
+(*polar=*)
+(*FullSimplify[*)
+(*ToPolarCoordinates@*)
+(*ComplexExpand@*)
+(*ReIm@*)
+(*func[x+func[x] I]*)
+(*,x\[Element]Reals]*)
+(*},*)
+(*With[{*)
+(*d=FullSimplify[*)
+(*D[polar,x]*)
+(*,x\[Element]Reals]*)
+(*},*)
+(*With[{*)
+(*all={Splice@polar,Splice@d}*)
+(*},*)
+(*Plot[*)
+(*all*)
+(*,{x,-3,3}*)
+(*,PlotLegends->all*)
+(*,PlotLabels->{len,rot,"\[PartialD] len","\[PartialD] rot"}*)
+(*,AxesLabel->{x,func[x]}*)
+(*]*)
+(*]*)
+(*]*)
+(*]*)
+(*]*)
+
+
+(* ::Input:: *)
+(*With[{*)
+(*func=Function[x,x^2]*)
+(*},*)
+(*With[{*)
+(*polar=*)
+(*FullSimplify[*)
+(*ToPolarCoordinates@*)
+(*ComplexExpand@*)
+(*ReIm@*)
+(*func[x+func[x] I]*)
+(*,x\[Element]Reals]*)
+(*},*)
+(*With[{*)
+(*d=FullSimplify[*)
+(*D[polar,x]*)
+(*,x\[Element]Reals]*)
+(*},*)
+(*With[{*)
+(*all={Splice@polar,Splice@d}*)
+(*},*)
+(*Plot[*)
+(*all*)
+(*,{x,-2,2}*)
+(*,PlotLegends->all*)
+(*,PlotLabels->{len,rot,"\[PartialD] len","\[PartialD] rot"}*)
+(*,AxesLabel->{x,func[x]}*)
+(*,ImageSize->Full*)
+(*]*)
+(*]*)
+(*]*)
+(*]*)
+(*]*)
+
+
+(* ::Input:: *)
+(*With[{*)
+(*func=Function[x,x]*)
+(*},*)
+(*With[{*)
+(*polar=*)
+(*FullSimplify[*)
+(*ToPolarCoordinates@*)
+(*ComplexExpand@*)
+(*ReIm@*)
+(*func[x+func[x] I]*)
+(*,x\[Element]Reals]*)
+(*},*)
+(*With[{*)
+(*d=FullSimplify[*)
+(*D[polar,x]*)
+(*,x\[Element]Reals]*)
+(*},*)
+(*With[{*)
+(*all={Splice@polar,Splice@d}*)
+(*},*)
+(*Plot[*)
+(*all*)
+(*,{x,-2,2}*)
+(*,PlotLegends->all*)
+(*,PlotLabels->{len,rot,"\[PartialD] len","\[PartialD] rot"}*)
+(*,AxesLabel->{x,func[x]}*)
+(*,ImageSize->Full*)
+(*]*)
+(*]*)
+(*]*)
+(*]*)
+(*]*)
+
+
+(* ::Input:: *)
+(*With[{*)
+(*func=Function[x,x]*)
+(*},*)
+(*With[{*)
+(*polar=*)
+(*FullSimplify[*)
+(*ToPolarCoordinates@*)
+(*ComplexExpand@*)
+(*ReIm@*)
+(*func[x+func[x] I]*)
+(*,x\[Element]Reals]*)
+(*},*)
+(*polar*)
+(*]*)
+(*]*)
+
+
+(* ::Input:: *)
+(*With[{*)
+(*func=Function[x,x^2]*)
+(*},*)
+(*With[{*)
+(*polar=*)
+(*FullSimplify[*)
+(*ToPolarCoordinates@*)
+(*ComplexExpand@*)
+(*ReIm@*)
+(*func[x+func[x] I]*)
+(*,x\[Element]Reals]*)
+(*},*)
+(*polar*)
+(*]*)
+(*]*)
+
+
+(* ::Input:: *)
+(*{Sqrt[2] Abs[x],ArcTan[x,x]}*)
+
+
+(* ::Input:: *)
+(*{((1-a)(Sqrt[2] Abs[x]))+ (a (x^2+x^4)),((1-a)ArcTan[x,x])+(a (ArcTan[x^2-x^4,2 x^3]))}*)
+
+
+(* ::Input:: *)
+(*FullSimplify[*)
+(*{((1-a)(Sqrt[2] Abs[x]))+ (a (x^2+x^4)),((1-a)ArcTan[x,x])+(a (ArcTan[x^2-x^4,2 x^3]))}*)
+(*,{x,a}\[Element]Reals*)
+(*]*)
+
+
+(* ::Input:: *)
+(*With[{*)
+(*all={a (x^2+x^4)-Sqrt[2] (-1+a) Abs[x],-((-1+a) ArcTan[x,x])+a ArcTan[x^2-x^4,2 x^3]}*)
+(*},Manipulate[*)
+(*Plot[*)
+(*all*)
+(*,{x,-3,3}*)
+(*,PlotLabels->{len,rot}*)
+(*,AxesLabel->{x,func[x]}*)
+(*,ImageSize->Large*)
+(*,PlotRange->{{-3,3},{-3,3}}*)
+(*]*)
+(*,{a,0,1}*)
+(*]*)
+(*]*)
+
+
+(* ::Input:: *)
+(*ArcLength[{x,x x},{x,0,2}]*)
+
+
+(* ::Input:: *)
+(*N[Sqrt[17]+ArcSinh[4]/4]*)
+
+
+(* ::Input:: *)
+(*ArcLength[{x,x x},{x,0,1}]*)
+
+
+(* ::Input:: *)
+(*N[1/4 (2 Sqrt[5]+ArcSinh[2])]*)
+
+
+(* ::Input:: *)
+(*(x^2+x^4)/.x->0*)
+
+
+(* ::Input:: *)
+(*(x^2+x^4)/.x->1*)
+
+
+(* ::Input:: *)
+(*D[(x^2+x^4),x]*)
+
+
+(* ::Input:: *)
+(*2 x+4 x^3/.x->1*)
+
+
+(* ::Input:: *)
+(*2 x+4 x^3*)
+
+
+(* ::Input:: *)
+(*With[{*)
+(*func=Function[x,1/x]*)
+(*},*)
+(*With[{*)
+(*polar=*)
+(*FullSimplify[*)
+(*ToPolarCoordinates@*)
+(*ComplexExpand@*)
+(*ReIm@*)
+(*func[x+func[x] I]*)
+(*,x\[Element]Reals]*)
+(*},*)
+(*With[{*)
+(*d=FullSimplify[*)
+(*D[polar,x]*)
+(*,x\[Element]Reals]*)
+(*},*)
+(*Plot[*)
+(*polar*)
+(*,{x,-3,3}*)
+(*,PlotLegends->polar*)
+(*,PlotLabels->{Length,Rotation}*)
+(*,AxesLabel->{x,func[x]}*)
+(*,ImageSize->Large*)
+(*]*)
+(*]*)
+(*]*)
+(*]*)
+
+
+(* ::Input:: *)
+(*Limit[ArcTan[x^3,-x],x->0,Direction->"FromBelow"]*)
+
+
+(* ::Input:: *)
+(*Limit[ArcTan[x^3,-x],x->0,Direction->"FromAbove"]*)
+
+
+(* ::Input:: *)
+(*N@(\[Pi]/2)*)
+
+
+(* ::Input:: *)
+(*With[{*)
+(*func=Function[x,x^2]*)
+(*},*)
+(*With[{*)
+(*polar=*)
+(*FullSimplify[*)
+(*ToPolarCoordinates@*)
+(*ComplexExpand@*)
+(*ReIm@*)
+(*func[x+func[x] I]*)
+(*,x\[Element]Reals]*)
+(*},*)
+(*With[{*)
+(*d=FullSimplify[*)
+(*D[polar,x]*)
+(*,x\[Element]Reals]*)
+(*},*)
+(*Plot[*)
+(*polar*)
+(*,{x,-3,3}*)
+(*,PlotLegends->polar*)
+(*,PlotLabels->{Length,Rotation}*)
+(*,AxesLabel->{x,func[x]}*)
+(*,ImageSize->Large*)
+(*]*)
+(*]*)
+(*]*)
+(*]*)
+
+
+(* ::Input:: *)
+(*With[{*)
+(*func=Function[x,Cos[x]]*)
+(*},*)
+(*With[{*)
+(*polar=*)
+(*FullSimplify[*)
+(*ToPolarCoordinates@*)
+(*ComplexExpand@*)
+(*ReIm@*)
+(*func[x+func[x] I]*)
+(*,x\[Element]Reals]*)
+(*},*)
+(*With[{*)
+(*d=FullSimplify[*)
+(*D[polar,x]*)
+(*,x\[Element]Reals]*)
+(*},*)
+(*Plot[*)
+(*polar*)
+(*,{x,-3,3}*)
+(*,PlotLegends->polar*)
+(*,PlotLabels->{Length,Rotation}*)
+(*,AxesLabel->{x,func[x]}*)
+(*,ImageSize->Large*)
+(*]*)
+(*]*)
+(*]*)
+(*]*)
+
+
+(* ::Input:: *)
+(*With[{*)
+(*func=Function[x,Sin[1/x]]*)
+(*},*)
+(*With[{*)
+(*polar=*)
+(*FullSimplify[*)
+(*ToPolarCoordinates@*)
+(*ComplexExpand@*)
+(*ReIm@*)
+(*func[x+func[x] I]*)
+(*,x\[Element]Reals]*)
+(*},*)
+(*With[{*)
+(*d=FullSimplify[*)
+(*D[polar,x]*)
+(*,x\[Element]Reals]*)
+(*},*)
+(*Plot[*)
+(*polar*)
+(*,{x,-3,3}*)
+(*,PlotLegends->polar*)
+(*,PlotLabels->{Length,Rotation}*)
+(*,AxesLabel->{x,func[x]}*)
+(*,ImageSize->Large*)
+(*]*)
+(*]*)
+(*]*)
+(*]*)
+
+
+(* ::Input:: *)
+(*With[{*)
+(*func=Function[x,x^2]*)
+(*},*)
+(*With[{*)
+(*polar=*)
+(*FullSimplify[*)
+(*ToPolarCoordinates@*)
+(*ComplexExpand@*)
+(*ReIm@*)
+(*func[x+func[x] I]*)
+(*,x\[Element]Reals]*)
+(*},*)
+(*With[{*)
+(*d=FullSimplify[*)
+(*D[polar,x]*)
+(*,x\[Element]Reals]*)
+(*},*)
+(*Plot[*)
+(*polar*)
+(*,{x,-3,3}*)
+(*,PlotLegends->polar*)
+(*,PlotLabels->{Length,Rotation}*)
+(*,AxesLabel->{x,func[x]}*)
+(*,ImageSize->Large*)
+(*,PlotRange->{{-3,3},{-3,3}}*)
+(*]*)
+(*]*)
+(*]*)
+(*]*)
+
+
+(* ::Input:: *)
+(*With[{*)
+(*func=Function[x,x^2+2x]*)
+(*},*)
+(*With[{*)
+(*polar=*)
+(*FullSimplify[*)
+(*ToPolarCoordinates@*)
+(*ComplexExpand@*)
+(*ReIm@*)
+(*func[x+func[x] I]*)
+(*,x\[Element]Reals]*)
+(*},*)
+(*With[{*)
+(*d=FullSimplify[*)
+(*D[polar,x]*)
+(*,x\[Element]Reals]*)
+(*},*)
+(*Plot[*)
+(*polar*)
+(*,{x,-3,3}*)
+(*,PlotLegends->polar*)
+(*,PlotLabels->{Length,Rotation}*)
+(*,AxesLabel->{x,func[x]}*)
+(*,ImageSize->Large*)
+(*,PlotRange->{{-3,3},{-3,3}}*)
+(*]*)
+(*]*)
+(*]*)
+(*]*)
+
+
+(* ::Input:: *)
+(*Manipulate[*)
+(*With[{*)
+(*func=Function[x,a x^2+b x+c],*)
+(*ide={2 Sqrt[2] Abs[x],ArcTan[x,x]}*)
+(*},*)
+(*With[{*)
+(*polar=*)
+(*FullSimplify[*)
+(*ToPolarCoordinates@*)
+(*ComplexExpand@*)
+(*ReIm@*)
+(*func[x+func[x] I]*)
+(*,x\[Element]Reals]*)
+(*},*)
+(*Plot[*)
+(*polar*)
+(*,{x,-3,3}*)
+(*,PlotLabels->{Length,Rotation}*)
+(*,AxesLabel->{x,func[x]}*)
+(*,ImageSize->Large*)
+(*,PlotRange->{{-3,3},{-3,3}}*)
+(*]*)
+(*]*)
+(*]*)
+(*,{{a,1},-2,2},{{b,0},-2,2},{{c,0},-2,2}]*)
+
+
+(* ::Input:: *)
+(*{2 Sqrt[2] Abs[x],ArcTan[x,x]}*)
